@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMK Negeri 1 Galang Meilantoro</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Header */
+    header {
+      background: #640D5F;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    #darkModeToggle {
+      margin-left: 10px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 10px 0 0 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background: #121212;
+      color: #f0f0f0;
+    }
+    body.dark-mode header {
+      background: #222;
+    }
+
+    /* Hero */
+    .hero {
+      background: url("smk.jpg") no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+    .judul-besar {
+      font-size: 48px;
+      margin: 0;
+    }
+    .subjudul {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #640D5F;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    /* Tombol Scroll Up */
+    #btnUp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #640D5F;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: none;
+      transition: 0.3s;
+    }
+    #btnUp:hover {
+      background: #8b238b;
+    }
+
+    /* Animasi jurusan */
+    #jurusanDisplay {
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    #jurusanDisplay.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div>
+      <h1>SMK Negeri 1 Galang Meilantoro</h1>
+      <button id="darkModeToggle">🌙</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#jurusan">Jurusan</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h2 class="judul-besar">Selamat Datang di Website Resmi</h2>
+      <p class="subjudul">SMK Negeri 1 Galang Meilantoro – Sekolah Vokasi Berkualitas</p>
+      <a href="#profil" class="btn">Lihat Profil Sekolah</a>
+    </div>
+  </section>
+
+  <!-- PROFIL -->
+  <section id="profil" class="content">
+    <div class="container">
+      <h3>Profil Sekolah</h3>
+      <p>Visi
+	  
+	Terwujudnya sekolah berkualitas, berkarakter dan berwawasan lingkungan
+		Misi
+		
+	Menyiapkan sarana prasarana dan SDM yang memenuhi SNP (Standar Nasional Pendidikan)
+	
+	Melaksanakan pembelajaran yang berbasis sains dan teknologi
+	
+	Mengimplementasikan iman, takwa dan nilai-nilai karakter bangsa dalam kehidupan sehari-hari
+	
+	Melaksanakan pembelajaran berbasis lingkungan serta mengaplikasikannya dalam kehidupan sehari-hari
+	
+	Menyiapkan tamatan yang mampu mengisi dan menciptakan lapangan kerja serta mengembangkan profesionalitas di bidang bisnis.
+	.</p>
+    </div>
+  </section>
+  <!-- JURUSAN -->
+  <section id="jurusan" class="content gray">
+    <div class="container">
+      <h3>Jurusan Unggulan</h3>
+      <ul>
+        <li>Teknik Komputer dan Jaringan</li>
+        <li>Rekayasa Perangkat Lunak</li>
+        <li>Akuntansi dan Keuangan Lembaga</li>
+        <li>Manajemen Perkantoran</li>
+        <li>Desain Komunikasi Visual</li>
+        <li>Bisnis Retail</li>
+        <li>Bisnis Digital</li>
+        <li>Layanan Perbankan Syariah</li>
+      </ul>
+    </div>
+  </section>
+
+  
+
+  <!-- JURUSAN -->
+  <section id="jurusan" class="content gray" style="text-align:center; padding:40px 0;">
+    <div class="container">
+      <h3>Jurusan Unggulan</h3>
+      <h2 id="jurusanDisplay" style="color:#640D5F; font-size:28px; margin-top:20px;"></h2>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="content">
+    <div class="container">
+      <h3>Kontak Kami</h3>
+      <p>Email: galangmeilantoro135@gmail.com</p>
+      <p>Telepon: +62 882-6665-3421</p>
+      <p>Alamat: Jl. Parangtritis No.KM.11, Dukuh, Sabdodadi, Bantul, DIY 55715</p>
+
+      <!-- Google Maps -->
+      <div class="google-map" style="margin-top:20px; text-align:center;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.689740837048!2d110.32811207474954!3d-7.612529675473129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a577ba80a1d65%3A0x7392b4e8cfb5be2f!2sSMKN%201%20Bantul!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+          width="600"
+          height="400"
+          style="border:0; border-radius:10px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 SMK Negeri 1 Galang Meilantoro. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll To Top -->
+  <button id="btnUp" onclick="scrollToTop()">↑</button>
+
+  <script>
+    // Dark Mode
+    const darkToggle = document.getElementById("darkModeToggle");
+    darkToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      darkToggle.textContent = 
+        document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+
+    // Scroll To Top
+    const btnUp = document.getElementById("btnUp");
+    window.addEventListener("scroll", () => {
+      if (document.documentElement.scrollTop > 200) {
+        btnUp.style.display = "block";
+      } else {
+        btnUp.style.display = "none";
+      }
+    });
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Jurusan Otomatis Bergantian
+    const jurusan = [
+      "Teknik Komputer dan Jaringan",
+      "Rekayasa Perangkat Lunak",
+      "Akuntansi dan Keuangan Lembaga",
+      "Manajemen Perkantoran",
+      "Desain Komunikasi Visual",
+      "Bisnis Retail",
+      "Bisnis Digital",
+      "Layanan Perbankan Syariah"
+    ];
+    let index = 0;
+    const jurusanDisplay = document.getElementById("jurusanDisplay");
+
+    function tampilkanJurusan() {
+      jurusanDisplay.classList.remove("show");
+      setTimeout(() => {
+        jurusanDisplay.textContent = jurusan[index];
+        jurusanDisplay.classList.add("show");
+        index = (index + 1) % jurusan.length;
+      }, 300);
+    }
+
+    tampilkanJurusan();
+    setInterval(tampilkanJurusan, 1500); // ganti tiap 1.5 detik
+  </script>
+</body>
+</html>
